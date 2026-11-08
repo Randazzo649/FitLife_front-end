@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>FitLife | Meu perfil</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../static/css/paginas.css">
+</head>
+
+<body>
+	<header class="BarraSuperior">
+		<button class="buttonVoltar" onclick="voltarPagina()" aria-label="Voltar">←</button>
+		<a class="MarcaCentral" href="perfil.html"><img src="../static/imgs/logo_fitlife_preto.png" alt="FitLife"></a>
+		<button	class="buttonMensagem" onclick="indisponivel()" aria-label="Mensagens"><img src="../static/imgs/message.png"alt=""></button>
+	</header>
+
+	<main class="ConteudoPagina">
+
+		<div class="PainelPerfil">
+
+			<aside class="CartaoPerfil">
+				<a class="buttonEditar" href="editar-perfil.html" title="Editar perfil"><img src="../static/imgs/edit_3.png"alt=""></a>
+				<div class="FotoPerfil" id="FotoPerfil">👤</div>
+
+				<h2 id="NomePerfil">Seu nome</h2>
+				<p>FitLife Standard</p>
+
+				<a class="buttonClaro" href="https://www.google.com/maps/search/academias+perto+de+mim/" target="_blank" rel="noopener">⌖ ENCONTRAR ACADEMIA</a>
+				<a class="buttonClaro" href="encontrar-personal.html">♧ ENCONTRAR PERSONAL</a>
+			</aside>
+
+			<section class="AtalhosPerfil">
+				<a class="Atalho" href="treinos.html">
+					<img src="../static/imgs/gym.png" alt="">
+					<div>
+						<strong>MEUS TREINOS</strong>
+						<small>ACADEMIA | MEUS EXERCÍCIOS</small>
+					</div>
+					<span class="buttonLaranja">DETALHES</span>
+				</a>
+
+				<a class="Atalho" href="atualizar-informacoes.html"><img src="../static/imgs/medical-record.png" alt="">
+					<div>
+						<strong>ATUALIZAR INFORMAÇÕES</strong>
+						<small>INFORMAÇÕES MÉDICAS | CÁLCULO DE IMC</small>
+					</div>
+					<span class="buttonLaranja">ATUALIZAR</span>
+				</a>
+
+				<div class="GradeAtalhos">
+					<button class="buttonImagem" onclick="indisponivel()">
+						<span>MEUS EVENTOS</span></button>
+						<button class="buttonImagem Comunidade" onclick="indisponivel()">
+							<span>MINHA COMUNIDADE</span>
+						</button>
+					</div>
+
+			</section>
+
+		</div>
+
+	</main>
+
+	<script src="../static/js/dados.js"></script>
+	<script src="../static/js/perfil.js"></script>
+	
+</body>
+
+</html>

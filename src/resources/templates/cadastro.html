@@ -1,0 +1,237 @@
+<!-- Usem o tab em vez do espaço!!!! --> 
+ 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cadastro FitLife em três etapas.">
+  <title>FitLife | Cadastro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet"> <!-- Fonte: JOST --> 
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="stylesheet" href="../static/css/responsive.css">
+  <script src="../static/js/validacoes.js" defer></script>
+  <script src="../static/js/pagamento.js" defer></script>
+</head>
+
+
+<body>
+  <!-- CABEÇALHO: logo centralizada, back-icon é o botão de retorno da etapa. -->
+  <header class="Header">
+    <div class="ConteudoHeader">
+
+      <button class="back-icon" id="backTop" type="button" aria-label="Voltar" title="Voltar"> ← </button>
+      <a class="Marca" href="index.html" aria-label="FitLife - início"><img src="../static/imgs/logo_fitlife_preto.png" class="Logo"></a>
+
+      <span class="EspacadorHeader" aria-hidden="true"></span>
+
+    </div>
+  </header>
+
+  <main class="CadastroEtapas">
+
+    <!-- PROGRESSO: cadastro.js atualiza largura, número e título conforme a etapa. -->
+    <div class="AreaProgresso">
+
+      <div class="TrilhaProgresso"><div class="PreenchimentoProgresso" id="PreenchimentoProgresso"></div></div>
+      <div class="TituloEtapa"><span id="NumeroEtapa">1.</span> <span id="TituloEtapa">DADOS PESSOAIS</span></div>
+
+    </div>
+
+    <!-- AVISO: aparece quando a validação da etapa impede o avanço. -->
+    <div id="AvisoGeral" class="Aviso" role="alert" aria-live="polite" hidden>Verifique as informações.</div>
+
+    <!-- FORMULÁRIO-->
+
+    <form id="FormularioFitLife" novalidate>
+
+      <!-- 1: dados pessoais -->
+      <section class="PainelEtapa Ativo" data-etapa="0" aria-labelledby="TituloDadosPessoais">
+
+        <h1 class="ApenasLeitorTela" id="TituloDadosPessoais">Dados pessoais</h1>
+
+        <div class="GradeFormulario GradeDadosPessoais">
+
+          <div class="Campo OcuparDuasColunas">
+            <label for="nome">Nome completo</label>
+            <input id="nome" name="nome" type="text" autocomplete="name" required minlength="3" placeholder=" ">
+          </div>
+
+          <div class="Campo">
+            <label for="nascimento">Data de nascimento</label>
+            <input id="nascimento" name="nascimento" type="text" inputmode="numeric" maxlength="10" placeholder="DD/MM/AAAA" required>
+          </div>
+
+          <div class="Campo">
+            <label for="cpf">CPF</label>
+            <input id="cpf" name="cpf" type="text" inputmode="numeric" maxlength="14" placeholder="000.000.000-00" required>
+          </div>
+
+          <div class="Campo">
+            <label for="genero">Gênero</label>
+            <select id="genero" name="genero" required>
+              <option value="">Selecione</option>
+              <option>Homem</option><option>Mulher</option><option>Pessoa Não-Binaria</option><option>Não informar</option>
+            </select>
+          </div>
+
+          <div class="Campo">
+            <label for="telefone">Telefone celular</label>
+            <input id="telefone" name="telefone" type="tel" inputmode="numeric" maxlength="15" placeholder="(00) 00000-0000" required>
+          </div>
+
+          <div class="Campo LarguraCompleta">
+            <label for="endereco">Endereço <small>(Logradouro, Número, Complemento, Bairro, Cidade, Estado, CEP)</small></label>
+            <input id="endereco" name="endereco" type="text" autocomplete="street-address" required placeholder=" ">
+          </div>
+
+          <div class="Campo">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" required placeholder="seuemail@exemplo.com">
+          </div>
+
+          <div class="Campo">
+            <label for="senha">Senha</label>
+            <input id="senha" name="senha" type="password" autocomplete="new-password" required minlength="8" placeholder="Mínimo 8 caracteres">
+            <small class="DicaCampo">Mínimo de 8 caracteres, 1 letra maiúscula e 1 símbolo.</small>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- 2: informações médicas.-->
+
+      <section class="PainelEtapa" data-etapa="1" aria-labelledby="TituloInformacoesMedicas">
+
+        <h1 class="ApenasLeitorTela" id="TituloInformacoesMedicas">Informações médicas</h1>
+      
+        <div class="GradeFormulario GradeInformacoesMedicas">
+
+          <div class="Campo">
+            <label for="peso">Peso (kg)</label>
+            <input id="peso" name="peso" type="number" min="1" max="500" step="0.1" required placeholder="Ex.: 70,5">
+          </div>
+
+          <div class="Campo">
+            <label for="altura">Altura</label>
+            <input id="altura" name="altura" type="number" min="0.5" max="2.8" step="0.01" required placeholder="Ex.: 1,75">
+          </div>
+
+          <div class="Campo">
+            <label for="sexo">Sexo</label>
+            <select id="sexo" name="sexo" required>
+              <option value="">Selecione</option><option>Feminino</option><option>Masculino</option><option>Intersexo</option>
+            </select>
+
+          </div>
+
+          <fieldset class="GrupoOpcoes OcuparDuasColunas">
+            <legend>Com que frequência você pratica atividade física?</legend>
+
+            <div class="ListaOpcoes">
+              <label class="Opcao"><input type="radio" name="frequencia" value="Diariamente" required><span>Diariamente</span></label>
+              <label class="Opcao"><input type="radio" name="frequencia" value="3 a 5 dias por semana"><span>De 3 a 5 dias por semana</span></label>
+              <label class="Opcao"><input type="radio" name="frequencia" value="Uma vez por semana"><span>Uma vez por semana</span></label>
+              <label class="Opcao"><input type="radio" name="frequencia" value="Não pratico"><span>Não pratico</span></label>
+            </div>
+
+          </fieldset>
+
+          <div class="Campo">
+
+            <label for="atividade">Qual tipo de atividade? <small>(opcional)</small></label>
+            <input id="atividade" name="atividade" type="text" placeholder="Ex.: musculação, corrida...">
+
+          </div>
+
+          <fieldset class="GrupoOpcoes">
+
+            <legend>Cardiopatia?</legend>
+
+            <div class="ListaOpcoes Compacto">
+              <label class="Opcao"><input type="radio" name="cardiopatia" value="Sim" required><span>Sim</span></label>
+              <label class="Opcao"><input type="radio" name="cardiopatia" value="Não"><span>Não</span></label>
+            </div>
+
+          </fieldset>
+
+          <fieldset class="GrupoOpcoes">
+
+            <legend>Você fuma atualmente?</legend>
+
+            <div class="ListaOpcoes Compacto">
+              <label class="Opcao"><input type="radio" name="fumo" value="Sim" required><span>Sim</span></label>
+              <label class="Opcao"><input type="radio" name="fumo" value="Não"><span>Não</span></label>
+              <label class="Opcao"><input type="radio" name="fumo" value="Em tratamento"><span>Em tratamento</span></label>
+            </div>
+
+          </fieldset>
+
+          <fieldset class="GrupoOpcoes OcuparUmaColuna">
+
+            <legend>Faz uso de bebida alcoólica?</legend>
+
+            <div class="ListaOpcoes Compacto">
+              <label class="Opcao"><input type="radio" name="alcool" value="Diariamente" required><span>Diariamente</span></label>
+              <label class="Opcao"><input type="radio" name="alcool" value="1-2 vezes por semana"><span>1–2 vezes por semana</span></label>
+              <label class="Opcao"><input type="radio" name="alcool" value="Esporadicamente"><span>Esporadicamente</span></label>
+              <label class="Opcao"><input type="radio" name="alcool" value="Não"><span>Não</span></label>
+            </div>
+
+          </fieldset>
+
+          <fieldset class="GrupoOpcoes LarguraCompleta">
+
+            <legend>Marque os problemas abaixo que tenha sido diagnosticado ou tratado por um médico</legend>
+
+            <div class="ListaOpcoes OpcoesSaude">
+              <label class="Opcao"><input type="checkbox" name="saude" value="Alcoolismo"><span>Alcoolismo</span></label>
+              <label class="Opcao"><input type="checkbox" name="saude" value="Anemia"><span>Anemia</span></label>
+              <label class="Opcao"><input type="checkbox" name="saude" value="Artrite/Artrose"><span>Artrite/Artrose</span></label>
+              <label class="Opcao"><input type="checkbox" name="saude" value="Asma"><span>Asma</span></label>
+              <label class="Opcao"><input type="checkbox" name="saude" value="AVC"><span>AVC</span></label>
+              <label class="Opcao"><input type="checkbox" name="saude" value="Diabetes"><span>Diabetes</span></label>
+              <label class="Opcao"><input type="checkbox" name="saude" value="Doença renal"><span>Doença renal</span></label>
+              <label class="Opcao"><input type="checkbox" name="saude" value="Doença autoimune"><span>Doença autoimune</span></label>
+              <label class="Opcao"><input type="checkbox" name="saude" value="Enfisema"><span>Enfisema</span></label>
+              <label class="Opcao"><input type="checkbox" name="saude" value="Epilepsia/Convulsões"><span>Epilepsia/Convulsões</span></label>
+              <label class="Opcao"><input type="checkbox" name="saude" value="Obesidade"><span>Obesidade</span></label>
+              <label class="Opcao"><input type="checkbox" name="saude" value="Trombose"><span>Trombose</span></label>
+              <label class="Opcao"><input type="checkbox" name="saude" value="Problemas musculares"><span>Problemas musculares</span></label>
+              <label class="Opcao"><input type="checkbox" name="saude" value="Pressão alta"><span>Pressão alta</span></label>
+              <label class="Opcao"><input type="checkbox" name="saude" value="Nenhum"><span>Nenhum</span></label>
+            </div>
+
+          </fieldset>
+
+
+
+          <div class="Campo">
+
+            <label for="restricao">Possui alguma restrição à prática de atividade física? <small>(opcional)</small></label>
+            <input id="restricao" name="restricao" type="text" placeholder="Descreva, se houver">
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ETAPA 3: escolha do objetivo  -->
+      <section class="PainelEtapa" data-etapa="2">
+        <div class="GradeObjetivos">
+          <button type="button" class="buttonObjetivo" data-objetivo="Condicionamento físico"><span class="ImagemObjetivo ImagemCondicionamento"></span><strong>CONDICIONAMENTO FÍSICO</strong><p>Melhore sua resistência, disposição e qualidade de vida.</p></button>
+          <button type="button" class="buttonObjetivo" data-objetivo="Lazer e bem-estar"><span class="ImagemObjetivo ImagemLazer"></span><strong>LAZER, BEM-ESTAR OU TERAPIA</strong><p>Encontre equilíbrio e hábitos saudáveis com atividades que você gosta.</p></button>
+          <button type="button" class="buttonObjetivo" data-objetivo="Estética"><span class="ImagemObjetivo ImagemEstetica"></span><strong>HIPERTROFIA OU MELHORIA ESTÉTICA</strong><p>Treine com foco em ganho de massa muscular e evolução pessoal.</p></button>
+        </div>
+      </section>
+    </form>
+    <div class="AcoesCadastro"><button id="nextButton" type="button" class="buttonAvancar">AVANÇAR</button></div>
+  </main>
+  <script src="../static/js/dados.js" defer></script>
+  <script src="../static/js/cadastro.js" defer></script>
+</body>
+</html>

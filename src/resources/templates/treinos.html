@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>FitLife | Meus treinos</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../static/css/paginas.css">
+</head>
+
+<body>
+	<header class="BarraSuperior">
+		<button class="buttonVoltar" onclick="voltarPagina()" aria-label="Voltar">←</button>
+		<a class="MarcaCentral" href="perfil.html"><img src="../static/imgs/logo_fitlife_preto.png" alt="FitLife"></a>
+		<button	class="buttonMensagem" onclick="indisponivel()" aria-label="Mensagens"><img src="../static/imgs/message.png"></button>
+	</header>
+
+	<main class="ConteudoPagina">
+
+		<h1>TREINAMENTO COM FOCO EM <span id="TituloObjetivoTreino">CONDICIONAMENTO FÍSICO</span></h1>
+	
+		<div id="TreinoAtual" class="GradeTreinos"></div>
+
+
+		<h1 class="EspacoSuperior">NOVO TREINO</h1>
+
+		<form id="FormularioTreino">
+
+			<label>Nome do treino<input id="NomeTreino" required placeholder="Ex.: Treino de segunda-feira"></label>
+			<div id="SessoesNovas"></div>
+			<button class="buttonPreto EspacoSuperior" id="buttonAdicionarSessao"	type="button">ADICIONAR SESSÃO</button>
+			<div class="AlinharDireita EspacoSuperior">
+				<button class="buttonLaranja" type="submit">SALVAR NOVO TREINO</button>
+			</div>
+
+		</form>
+
+		<dialog id="ModalTreino" class="ModalTreino">
+
+			<form method="dialog" id="FormularioModal">
+
+				<div class="TopoModal">
+					<h2>EDITE SEU TREINO</h2>
+					<button class="buttonFechar" type="button" id="buttonFecharModal">×</button>
+				</div>
+
+				<div id="CategoriasModal"></div>
+				<button class="buttonLaranja" type="button" id="buttonAdicionarCategoria">+	ADICIONAR CATEGORIA</button>
+				<button class="buttonPreto" type="submit" id="buttonSalvarModal">SALVAR</button>
+			</form>
+
+		</dialog>
+		
+	</main>
+
+	<script src="../static/js/dados.js"></script>
+	<script src="../static/js/perfil.js"></script>
+	<script src="../static/js/treinos.js"></script>
+
+</body>
+
+</html>
