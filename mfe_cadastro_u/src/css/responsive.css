@@ -1,0 +1,71 @@
+/*  Responsividade */
+
+@media (max-width: 900px) {
+  .CadastroEtapas { 
+    width: min(100% - 36px, 760px); 
+    margin-top: 30px; 
+  }
+
+  .GradeDadosPessoais { 
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
+  }
+
+  /* REMOVER  */
+  .LayoutPagamento { 
+    grid-template-columns: 1fr;
+    gap: 35px; 
+  }
+
+  .OpcoesSaude { 
+    grid-template-columns: repeat(3, minmax(0, 1fr)); 
+  }
+}
+
+@media (max-width: 620px) {
+  .Header { 
+    height: 78px; 
+  }
+  
+  .ConteudoHeader { 
+    padding: 0 17px; 
+  }
+  
+  .back-icon { 
+    width: 38px; 
+    height: 38px; 
+    font-size: 25px; 
+  }
+
+  .CadastroEtapas { 
+    width: calc(100% - 32px); 
+    margin: 25px auto 45px; 
+  }
+
+  .AreaProgresso { 
+    margin-bottom: 30px; 
+  }
+
+  .TituloEtapa { 
+    font-size: 21px; 
+  }
+
+  .GradeFormulario, .GradeDadosPessoais { 
+    grid-template-columns: 1fr; gap: 19px; 
+  }
+
+  .OcuparDuasColunas, .OcuparUmaColuna, .LarguraCompleta, .GradeDadosPessoais .OcuparDuasColunas { 
+    grid-column: auto; 
+  }
+
+  .ListaOpcoes { 
+    gap: 13px 18px; 
+  }
+
+  .OpcoesSaude { 
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
+  }
+
+  .DuasColunas { 
+    grid-template-columns: 1fr 1fr; 
+  }
+}
