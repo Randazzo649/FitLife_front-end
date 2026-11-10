@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>FitLife | Editar perfil</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="css/paginas.css">
+</head>
+
+<body>
+  <header class="BarraSuperior">
+    <button class="buttonVoltar" onclick="voltarPagina()" aria-label="Voltar">←</button>
+    <a class="MarcaCentral" href="perfil.html"><img src="assets/logo_fitlife_preto.png" alt="FitLife"></a>
+    <button class="buttonMensagem" onclick="indisponivel()" aria-label="Mensagens"><img src="assets/message.png" alt=""></button>
+  </header>
+        
+  <main class="ConteudoPagina">
+    <h1>MEU PERFIL</h1>
+    <form id="FormularioPerfil" class="GradePerfil">
+      <div class="AreaFoto">
+        <div class="FotoGrande" id="FotoPerfil">👤</div>
+				<label class="buttonLaranja buttonUpload" for="ArquivoFoto">ADICIONAR NOVA FOTO</label>
+					<input id="ArquivoFoto" type="file" accept="image/*">   <!-- O hidden aqui não funcionou. Input está duplicado na pagina, de forma mega esquisita -->
+      </div>
+                
+      <div class="CamposPerfil">
+        <label>E-mail<input type="email" name="email" required></label>
+					<div class="DuasColunas">
+						<label>Gênero<select name="genero">
+							<option>Homem</option>
+							<option>Mulher</option>
+							<option>Pessoa Não-Binaria</option>
+							<option>Não informar</option></select>
+						</label>
+						
+						<label>Telefone<input name="telefone" id="TelefonePerfil" maxlength="15" required></label>
+					</div>
+                
+          <label>Endereço<input name="endereco" required></label>
+                    
+          <div class="Redes">
+            <a class="buttonInstagram" href="https://www.instagram.com/" target="_blank" rel="noopener">Conectar Instagram</a>
+            <a class="buttonTikTok" href="https://www.tiktok.com/" target="_blank" rel="noopener">Conectar TikTok</a>
+            <a class="buttonWhatsApp" href="https://www.whatsapp.com/" target="_blank" rel="noopener">Conectar WhatsApp</a>
+          </div>
+                    
+          <div class="AlinharDireita">
+            <button class="buttonPreto" type="submit">SALVAR</button>
+          </div>
+      </div>
+    	</form>
+  	</main>
+        
+    <script src="js/dados.js">
+    </script><script src="js/perfil.js"></script>
+        
+</body>
+</html>
