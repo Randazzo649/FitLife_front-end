@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/comunidade.css">
+  <title>FitLife | Meus eventos</title>
+</head>
+
+<body>
+
+  <header class="BarraSuperior">
+    <button class="buttonVoltar" onclick="voltarPagina()" aria-label="Voltar">←</button>
+    <a class="MarcaCentral" href="../perfil/perfil.html"><img src="assets/logo_fitlife_preto.png"></a>
+    <button class="buttonMensagem" onclick="indisponivel()" aria-label="Mensagens"><img src="assets/message.png"></button>
+  </header>
+
+  <main class="ConteudoPagina">
+
+    <h1>MEUS EVENTOS</h1>
+
+    <section class="GradeEventos MeusEventos" id="EventosInscritos"></section>
+    <h2>NOVO EVENTO</h2>
+
+    <form class="FormularioEvento" id="FormularioNovoEvento">
+
+      <div>
+        <label class="CampoFormulario">Nome do Evento
+          <input id="NomeEvento" maxlength="90" required placeholder="Ex.: Preparo Maratona 20/12">
+        </label>
+
+        <label class="AreaUpload" for="FotoEvento">
+          <span>📷</span><strong id="TextoUpload">Upload da Foto do Evento</strong>
+          <img class="PreviaUpload" id="PreviaEvento" hidden>
+        </label>
+
+        <input type="file" id="FotoEvento" accept="image/*" hidden>
+      </div>
+
+      <div>
+        <label class="CampoFormulario">Data e Hora
+          <input type="datetime-local" id="DataEvento" required>
+        </label>
+
+        <label class="CampoFormulario">Local do evento
+          <input id="LocalEvento" maxlength="90" required placeholder="Cidade ou endereço">
+        </label>
+
+        <label class="CampoFormulario">Descrição
+          <input id="DescricaoEvento" maxlength="180" placeholder="Informações adicionais (opcional)">
+        </label>
+      </div>
+
+      <div class="RodapeFormulario"><button type="submit" class="buttonPrincipal">SALVAR</button></div>
+    </form>
+
+  </main>
+
+  <script src="js/comunidade.js"></script>
+
+</body>
+
+</html>

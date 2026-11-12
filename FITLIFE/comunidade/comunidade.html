@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/comunidade.css">
+  <title>FitLife | Minha comunidade</title>
+</head>
+
+<body>
+
+  <header class="BarraSuperior">
+    <button class="buttonVoltar" onclick="voltarPagina()" aria-label="Voltar">←</button>
+    <a class="MarcaCentral" href="../perfil/perfil.html"><img src="assets/logo_fitlife_preto.png" alt="FitLife"></a>
+    <button class="buttonMensagem" onclick="indisponivel()" aria-label="Mensagens"><img src="assets/message.png" alt="Mensagens"></button>
+  </header>
+
+  <main class="ConteudoPagina">
+    <h1>MINHA COMUNIDADE</h1>
+
+    <section class="GradeCompartilhar">
+
+      <div class="CartaoResultado">
+        <img id="ImagemResultado" src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=700">
+        <span class="LegendaResultado">SEU RESULTADO</span>
+      </div>
+
+      <div class="PainelCompartilhar">
+
+        <strong>Compartilhe seu resultado</strong>
+
+        <textarea class="CampoMensagem" id="MensagemPostagem" placeholder="Conte como foi seu treino... #fitlife #fitcrew"></textarea>
+
+        <label class="buttonSecundario" for="ArquivoResultado">+ Adicionar imagem ou vídeo</label>
+
+        <input type="file" id="ArquivoResultado" accept="image/*,video/*" hidden>   
+        <div id="PreviaResultado" class="Aviso" aria-live="polite"></div>
+        <div class="LinhaAcoes" id="AcoesCompartilhar"></div>
+      </div>
+
+    </section>
+
+    <h2>EVENTOS DA COMUNIDADE</h2>
+
+    <section class="GradeEventos" id="EventosDisponiveis"></section>
+
+  </main>
+
+  <div class="FundoModal" id="ModalEvento" hidden>
+
+    <div class="ConteudoModal" role="dialog" aria-modal="true" aria-labelledby="TituloModal">
+
+      <button class="buttonFechar" onclick="fecharModal()" aria-label="Fechar">×</button>
+
+      <img id="ImagemModal">
+      <h3 id="TituloModal"></h3>
+      <p id="DataModal"></p>
+      <p id="DescricaoModal"></p>
+      <button class="buttonPrincipal" id="buttonParticipar">PARTICIPAR</button>
+
+    </div>
+  </div>
+
+  <script src="js/comunidade.js"></script>
+
+</body>
+
+</html>

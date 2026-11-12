@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>FitLife | Meu perfil</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/paginas.css">
+</head>
+
+<body>
+	<header class="BarraSuperior">
+		<button class="buttonVoltar" onclick="voltarPagina()" aria-label="Voltar">←</button>
+		<a class="MarcaCentral" href="../perfil/perfil.html"><img src="assets/logo_fitlife_preto.png"></a>
+		<button	class="buttonMensagem" onclick="indisponivel()" aria-label="Mensagens"><img src="assets/message.png"alt=""></button>
+	</header>
+
+	<main class="ConteudoPagina">
+
+		<div class="PainelPerfil">
+
+			<aside class="CartaoPerfil">
+				<a class="buttonEditar" href="../editar-perfil/editar-perfil.html" title="Editar perfil"><img src="assets/edit_3.png"></a>
+				<div class="FotoPerfil" id="FotoPerfil">👤</div>
+
+				<h2 id="NomePerfil">Seu nome</h2>
+				<p>FitLife Standard</p>
+
+				<a class="buttonClaro" href="https://www.google.com/maps/search/academias+perto+de+mim/" target="_blank" rel="noopener">⌖ ENCONTRAR ACADEMIA</a>
+				<a class="buttonClaro" href="../encontrar-personal/encontrar-personal.html">♧ ENCONTRAR PERSONAL</a>
+			</aside>
+
+			<section class="AtalhosPerfil">
+				<a class="Atalho" href="../treinos/treinos.html">
+					<img src="assets/gym.png">
+					<div>
+						<strong>MEUS TREINOS</strong>
+						<small>ACADEMIA | MEUS EXERCÍCIOS</small>
+					</div>
+					<span class="buttonLaranja">DETALHES</span>
+				</a>
+
+				<a class="Atalho" href="../atualizar-informacoes/atualizar-informacoes.html"><img src="assets/medical-record.png">
+					<div>
+						<strong>ATUALIZAR INFORMAÇÕES</strong>
+						<small>INFORMAÇÕES MÉDICAS | CÁLCULO DE IMC</small>
+					</div>
+					<span class="buttonLaranja">ATUALIZAR</span>
+				</a>
+
+				<div class="GradeAtalhos">
+					<a class="buttonImagem" href="../eventos/eventos.html">
+						<span>MEUS EVENTOS</span></a>
+						<a class="buttonImagem Comunidade" href="../comunidade/comunidade.html">
+							<span>MINHA COMUNIDADE</span>
+						</a>
+					</div>
+
+			</section>
+
+		</div>
+
+	</main>
+
+	<script src="js/dados.js"></script>
+	<script src="js/perfil.js"></script>
+	
+</body>
+
+</html>

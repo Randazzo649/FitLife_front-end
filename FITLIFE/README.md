@@ -1,9 +1,13 @@
-# FitLife — protótipo
+# FitLife — Microfrontend
 
-## Arquivos
-- `css/style.css` e `responsive.css`: cadastro; `css/paginas.css`: telas internas.
-- `js/validacoes.js`: CPF, data, telefone e senha; `js/cadastro.js`: três etapas.
-- `js/dados.js`: armazenamento local temporário, que poderá ser substituído por API.
-- `js/perfil.js`, `informacoes.js`, `treinos.js`: interações de cada página.
-- `js/pagamento.js`: finado pagamento.
+## Páginas
 
+- `home/index.html`
+- `cadastro/cadastro.html`
+- `perfil/perfil.html`
+- `editar-perfil/editar-perfil.html`
+- `atualizar-informacoes/atualizar-informacoes.html`
+- `treinos/treinos.html`
+- `encontrar-personal/encontrar-personal.html`
+- `comunidade/comunidade.html`
+- `eventos/eventos.html`

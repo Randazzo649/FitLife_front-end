@@ -1,0 +1,62 @@
+/* COMUNIDADE — estilos próprios deste microfrontend. */
+:root { --laranja: #ff6300; --cinza: #d6d6d6; --branco: #FFFAFA; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Jost, Arial, sans-serif; color: #090909; background: white; }
+button, input, textarea { font: inherit; }
+button, a { cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+.BarraSuperior { height: 112px; background: white; border-bottom: 2px solid #ddd; box-shadow: 0 2px 4px #0002; display: flex; align-items: center; justify-content: space-between; padding: 0 max(7%, 30px); position: sticky; top: 0; z-index: 20; }
+.MarcaCentral { position: absolute; left: 50%; transform: translateX(-50%); }
+.MarcaCentral img { width: 175px; max-height: 76px; object-fit: contain; }
+.buttonVoltar { width: 36px; height: 36px; background: #000; color: white; border: 0; border-radius: 50%; font-size: 27px; line-height: 1; }
+.buttonMensagem { border: 0; background: transparent; position: relative; }
+.buttonMensagem img { width: 40px; }
+.Notificacao { position: absolute; left: -6px; top: -7px; background: var(--laranja); color: white; border-radius: 50%; font-size: 12px; padding: 3px 8px; }
+.ConteudoPagina { max-width: 1200px; margin: 25px auto 90px; padding: 0 22px; }
+h1, h2 { color: var(--laranja); font-size: 25px; margin: 22px 0 40px; font-weight: 700; }
+h2 { margin: 55px 0 28px; }
+.GradeCompartilhar { display: grid; grid-template-columns: 315px 1fr; gap: 16px; align-items: stretch; }
+.CartaoResultado { height: 445px; border-radius: 35px; overflow: hidden; position: relative; background: linear-gradient(135deg, #f2e68c, #9b9b9b); }
+.CartaoResultado img, .ImagemEvento { width: 100%; height: 100%; object-fit: cover; }
+.CartaoResultado::after, .CartaoEvento::after { content: ''; position: absolute; inset: 35% 0 0; background: linear-gradient(transparent, #000e); pointer-events: none; }
+.LegendaResultado { position: absolute; bottom: 24px; left: 28px; color: white; z-index: 1; font-size: 20px; font-weight: 700; }
+.PainelCompartilhar { background: var(--cinza); padding: 28px 35px; border-radius: 25px; display: flex; flex-direction: column; gap: 14px; }
+.PainelCompartilhar strong { font-size: 20px; }
+.CampoMensagem { width: 100%; min-height: 240px; resize: vertical; border: 0; border-radius: 27px; padding: 25px 32px; background: white; outline-color: var(--laranja); }
+.LinhaAcoes { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; margin-top: auto; }
+.buttonRede { display: inline-flex; align-items: center; justify-content: center; gap: 12px; border: 0; border-radius: 30px; color: white; padding: 11px 17px; font-size: 14px; font-weight: 700; min-width: 150px; }
+.buttonRede img { width: 20px; height: 20px; object-fit: contain; }
+.Instagram { background: #ff0069; }.Tiktok { background: #191919; }.Whatsapp { background: #00b900; }
+.buttonSecundario { background: white; border: 1px solid #aaa; border-radius: 25px; padding: 9px 18px; }
+.buttonPrincipal { background: black; color: white; border: 0; border-radius: 25px; padding: 10px 30px; letter-spacing: 1px; font-weight: 600; }
+.buttonPrincipal:hover, .buttonSecundario:hover { background: var(--laranja); color: white; }
+.GradeEventos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.GradeEventos.MeusEventos { grid-template-columns: repeat(2, 1fr); }
+.CartaoEvento { border: 0; padding: 0; position: relative; border-radius: 30px; height: 215px; overflow: hidden; background: #ccc; color: white; text-align: left; display: block; width: 100%; }
+.CartaoEvento:hover { transform: translateY(-4px); box-shadow: 0 7px 15px #0003; }
+.TextoEvento { position: absolute; bottom: 15px; left: 25px; right: 15px; z-index: 1; }
+.TextoEvento strong { display: block; font-size: 20px; letter-spacing: 1px; }
+.TextoEvento small { font-size: 15px; }
+.CartaoMeuEvento { position: relative; }
+.CartaoMeuEvento .CartaoEvento { height: 245px; }
+.AcoesEvento { display: flex; justify-content: space-around; gap: 5px; margin-top: -48px; position: relative; z-index: 2; padding: 0 10px 8px; }
+.AcoesEvento .buttonRede { min-width: 0; flex: 1; font-size: 11px; padding: 9px 6px; }
+.AcoesEvento .buttonRede img { width: 16px; height: 16px; }
+.buttonEditarEvento { position: absolute; top: 15px; right: 15px; z-index: 3; background: #0008; color: white; border: 1px solid white; border-radius: 8px; padding: 4px 10px; }
+.FormularioEvento { display: grid; grid-template-columns: minmax(0, 2fr) minmax(230px, 1fr); gap: 55px; padding: 0 45px 25px; }
+.CampoFormulario { display: flex; flex-direction: column; gap: 8px; margin-bottom: 30px; }
+.CampoFormulario input { width: 100%; border: 1px solid #888; border-radius: 30px; padding: 13px 25px; outline-color: var(--laranja); }
+.CampoFormulario input[type=datetime-local] { border-radius: 5px; padding: 11px; }
+.AreaUpload { display: flex; align-items: center; justify-content: center; gap: 20px; min-height: 140px; border: 1px solid #aaa; border-radius: 35px; cursor: pointer; text-align: center; padding: 20px; }
+.AreaUpload span { font-size: 46px; }
+.PreviaUpload { max-height: 110px; max-width: 180px; object-fit: contain; border-radius: 10px; }
+.RodapeFormulario { grid-column: 1 / -1; text-align: right; }
+.FundoModal { position: fixed; inset: 0; background: #0009; z-index: 30; display: grid; place-items: center; padding: 20px; }
+.FundoModal[hidden] { display: none; }
+.ConteudoModal { width: min(540px, 100%); max-height: 85vh; overflow-y: auto; background: white; border-radius: 28px; padding: 26px; position: relative; }
+.ConteudoModal img { width: 100%; height: 200px; object-fit: cover; border-radius: 15px; }
+.ConteudoModal h3 { font-size: 23px; margin-bottom: 8px; }
+.buttonFechar { position: absolute; right: 18px; top: 15px; border: 0; background: #eee; border-radius: 50%; width: 32px; height: 32px; }
+.Aviso { color: #555; font-size: 13px; }
+@media (max-width: 850px) { .GradeCompartilhar, .FormularioEvento { grid-template-columns: 1fr; } .GradeEventos, .GradeEventos.MeusEventos { grid-template-columns: 1fr 1fr; } .CartaoResultado { height: 300px; } .FormularioEvento { padding: 0; gap: 0; } }
+@media (max-width: 580px) { .BarraSuperior { height: 80px; padding: 0 20px; } .MarcaCentral img { width: 125px; } .GradeEventos, .GradeEventos.MeusEventos { grid-template-columns: 1fr; } .PainelCompartilhar { padding: 20px; } .CartaoEvento { height: 230px; } }

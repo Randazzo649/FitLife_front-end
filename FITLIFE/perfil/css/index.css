@@ -1,0 +1,354 @@
+/*    home e login  */
+
+:root {
+  --laranja: #ff6300;
+  --branco: #FFFAFA;
+  --cinza: #d6d6d6;
+  --fonte: 'Jost', Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #080808;
+  background: var(--branco);
+  font-family: var(--fonte);
+}
+
+button, input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* A logo fica à esquerda e as opções de navegação à direita. */
+.CabecalhoInicial {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 96px;
+  padding: 18px 4%;
+}
+
+.MarcaInicial img {
+  display: block;
+  width: 130px;
+  height: auto;
+}
+
+.NavegacaoInicial {
+  display: flex;
+  align-items: center;
+  gap: 44px;
+}
+
+.buttonLogin {
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.buttonCadastro {
+  padding: 9px 24px;
+  border-radius: 30px;
+  color: white;
+  background: var(--laranja);
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  white-space: nowrap;
+}
+
+.buttonCadastro:hover,
+.buttonEntrar:hover {
+  background: #e35800;
+}
+
+/* O banner usa o tamanho da janela */
+.DestaqueInicial {
+  position: relative;
+  min-height: 730px;
+  height: 100vh;
+  overflow: hidden;
+  background: #17120e;
+}
+
+.ImagensDestaque,
+.ImagemDestaque,
+.SombraDestaque {
+  position: absolute;
+  inset: 0;
+}
+
+.ImagemDestaque {
+  opacity: 0;
+  background-position: center;
+  background-size: cover;
+  transition: opacity 1.6s ease-in-out;
+}
+
+.ImagemDestaque.Ativa {
+  opacity: 1;
+}
+
+.SombraDestaque {
+  background: linear-gradient(to bottom, rgba(0,0,0,.78) 0%, rgba(0,0,0,.25) 24%, rgba(0,0,0,.24) 70%, rgba(0,0,0,.50) 100%);
+}
+
+.ConteudoDestaque {
+  position: absolute;
+  z-index: 2;
+  left: 6.65%;
+  bottom: 18%;
+  color: white;
+}
+
+.ConteudoDestaque h1 {
+  margin: 0 0 9px;
+  font-size: clamp(43px, 5vw, 75px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -.8px;
+}
+
+.ConteudoDestaque h1 span {
+  display: block;
+  color: var(--laranja);
+}
+
+.ConteudoDestaque p {
+  margin: 14px 0 0;
+  font-size: clamp(14px, 1.25vw, 19px);
+  line-height: 1.4;
+}
+
+/* hover meio 3d */
+.SecaoObjetivos {
+  padding: 60px 0 75px;
+  background: #fff;
+}
+
+.LimiteConteudo {
+  width: min(86.7%, 1500px);
+  margin: auto;
+}
+
+.SecaoObjetivos h2 {
+  margin: 0 0 38px;
+  color: var(--laranja);
+  font-size: clamp(23px, 2vw, 30px);
+  font-weight: 700;
+}
+
+.GradeObjetivos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 34px;
+}
+
+.CartaoObjetivo {
+  position: relative;
+  min-height: 245px;
+  padding: 25px 25px 22px 45px;
+  border-radius: 22px;
+  background: var(--cinza);
+  box-shadow: 0 0 0 var(--laranja);
+  transition: transform .24s ease, box-shadow .24s ease;
+}
+
+.CartaoObjetivo:hover {
+  transform: translateY(-7px);
+  box-shadow: -7px 10px 0 var(--laranja);
+}
+
+.CartaoObjetivo h3 {
+  margin: 0 0 24px;
+  font-size: clamp(17px, 1.5vw, 22px);
+  font-weight: 800;
+  line-height: 1.12;
+}
+
+.CartaoObjetivo ul {
+  margin: 0;
+  padding: 0;
+  font-size: clamp(12px, 1.05vw, 15px);
+  line-height: 1.45;
+}
+
+.CartaoObjetivo li {
+  padding-left: 0;
+  margin: 0 0 13px;
+}
+
+/* O fundo escurece enquanto o login está aberto. */
+.FundoModal {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0,0,0,.32);
+}
+
+.JanelaLogin {
+  width: min(480px, 100%);
+  padding: 33px 36px 48px;
+  border-radius: 44px;
+  background: #efefef;
+  box-shadow: 0 5px 16px rgba(0,0,0,.22);
+}
+
+.TopoLogin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.TopoLogin h2 {
+  margin: 0;
+  color: var(--laranja);
+  font-size: 20px;
+}
+
+.buttonFechar {
+  border: 0;
+  background: transparent;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.CampoLogin {
+  margin-bottom: 16px;
+}
+
+.CampoLogin label {
+  display: block;
+  margin: 0 0 7px 22px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.CampoLogin input {
+  width: 100%;
+  height: 47px;
+  padding: 0 16px;
+  border: 1px solid #777;
+  border-radius: 30px;
+  outline: none;
+  background: transparent;
+}
+
+.CampoLogin input:focus {
+  border-color: var(--laranja);
+}
+
+.CampoLogin input.Invalido {
+  border: 2px solid #d92332;
+}
+
+.buttonEsqueci {
+  display: block;
+  margin: 2px auto 17px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--laranja);
+  text-decoration: underline;
+  font-size: 13px;
+}
+
+.AvisoLogin {
+  text-align: center;
+  color: #d92332;
+  font-size: 13px;
+}
+
+.buttonEntrar {
+  display: block;
+  width: 65%;
+  min-height: 35px;
+  margin: auto;
+  border: 0;
+  border-radius: 25px;
+  background: var(--laranja);
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+@media (max-width: 850px) {
+  .DestaqueInicial {
+    min-height: 600px;
+  }
+
+  .GradeObjetivos {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .CartaoObjetivo {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .CabecalhoInicial {
+    padding: 18px 5%;
+  }
+
+  .MarcaInicial img {
+    width: 105px;
+  }
+
+  .NavegacaoInicial {
+    gap: 12px;
+  }
+
+  .buttonCadastro {
+    padding: 9px 12px;
+    font-size: 9px;
+  }
+
+  .ConteudoDestaque {
+    left: 6%;
+    right: 6%;
+    bottom: 16%;
+  }
+
+  .ConteudoDestaque p br {
+    display: none;
+  }
+
+  .JanelaLogin {
+    padding: 28px 24px 36px;
+    border-radius: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ImagemDestaque,
+  .CartaoObjetivo {
+    transition: none;
+  }
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitLife | Seu treino, sua escolha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/dados.js" defer></script>
+  <script src="js/index.js" defer></script>
+</head>
+
+<body>
+
+  <!-- cabeçalho camada frontal -->
+  <header class="CabecalhoInicial">
+    <a href="../home/index.html" class="MarcaInicial" aria-label="Página inicial FitLife"><img src="assets/logo_fitlife_branco.png"></a>
+    <nav class="NavegacaoInicial" aria-label="Navegação principal">
+      <button type="button" class="buttonLogin" id="buttonAbrirLogin">LOGIN</button>
+      <a class="buttonCadastro" href="../cadastro/cadastro.html">QUERO SER FITLIFE</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- carrossel -->
+    <section class="DestaqueInicial" aria-label="Apresentação FitLife">
+
+      <div class="ImagensDestaque" aria-hidden="true">
+        <div class="ImagemDestaque Ativa" style="background-image: url('https://unsplash.com/photos/R0y_bEUjiOM/download?force=true&w=1920')"></div>
+        <div class="ImagemDestaque" style="background-image: url('https://unsplash.com/photos/7ZqT5W-8IKs/download?force=true&w=1920')"></div>
+        <div class="ImagemDestaque" style="background-image: url('https://unsplash.com/photos/TDhpTIK-neM/download?force=true&w=1920')"></div>
+        <div class="ImagemDestaque" style="background-image: url('https://unsplash.com/photos/MUUachMB5O8/download?force=true&w=1920')"></div>
+      </div>
+
+      <div class="SombraDestaque"></div>
+
+      <div class="ConteudoDestaque">
+        <h1>SEU TREINO,<span>SUA ESCOLHA</span></h1>
+        <p>Escolha seu personal, sua academia, seu treino e sua rotina:<br>
+          tudo personalizado para que você alcance o seu objetivo</p>
+      </div>
+
+    </section>
+
+    <section class="SecaoObjetivos" aria-labelledby="TituloObjetivos">
+
+      <div class="LimiteConteudo">
+
+        <h2 id="TituloObjetivos">QUAL O SEU OBJETIVO?</h2>
+
+        <div class="GradeObjetivos">
+
+          <article class="CartaoObjetivo">
+            <h3>CONDICIONAMENTO<br>FÍSICO</h3>
+            <ul>
+              <li>Desenvolvimento da resistência muscular</li>
+              <li>Melhora do desempenho cardiovascular</li>
+              <li>Aumento da capacidade respiratória</li>
+              <li>Ganho de equilíbrio e agilidade</li>
+            </ul>
+          </article>
+
+          <article class="CartaoObjetivo">
+            <h3>LAZER, BEM-ESTAR OU<br>TERAPÊUTICO</h3>
+            <ul>
+              <li>Integração do dia-a-dia com o movimento</li>
+              <li>Metas individuais sem pressão</li>
+              <li>Melhoria da Saúde Mental</li>
+              <li>Foco na Qualidade de Vida e no Equilíbrio</li>
+            </ul>
+          </article>
+
+          <article class="CartaoObjetivo">
+            <h3>HIPERTROFIA OU<br>MELHORIA ESTÉTICA</h3>
+            <ul>
+              <li>Foco na simetria e definição muscular</li>
+              <li>Melhoria da Saúde óssea</li>
+              <li>Aceleração natural do metabolismo</li>
+              <li>Desenvolvimento da massa muscular</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- modal login -->
+  <div class="FundoModal" id="FundoModal" hidden>
+
+    <section class="JanelaLogin" role="dialog" aria-modal="true" aria-labelledby="TituloLogin">
+
+      <div class="TopoLogin">
+        <h2 id="TituloLogin">LOGIN</h2>
+        <button type="button" class="buttonFechar" id="buttonFecharLogin" aria-label="Fechar login">X</button>
+      </div>
+
+      <form id="FormularioLogin" novalidate>
+        
+        <div class="CampoLogin">
+          <label for="EmailLogin">E-mail</label>
+          <input type="email" id="EmailLogin" name="email" autocomplete="email" required>
+        </div>
+
+        <div class="CampoLogin">
+          <label for="SenhaLogin">Senha</label>
+          <input type="password" id="SenhaLogin" name="senha" autocomplete="current-password" required>
+        </div>
+
+        <button type="button" class="buttonEsqueci" id="buttonEsqueciSenha">Esqueceu a senha?</button>
+
+        <p class="AvisoLogin" id="AvisoLogin" role="alert" hidden>Verifique as informações.</p>
+
+        <button type="submit" class="buttonEntrar">ENTRAR</button>
+      </form>
+
+    </section>
+  </div>
+</body>
+</html>

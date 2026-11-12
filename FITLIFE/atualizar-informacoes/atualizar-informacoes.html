@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>FitLife | Informações médicas</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/paginas.css">
+</head>
+
+<body>
+	<header class="BarraSuperior">
+		<button class="buttonVoltar" onclick="voltarPagina()" aria-label="Voltar">←</button>
+		<a class="MarcaCentral" href="../perfil/perfil.html"><img src="assets/logo_fitlife_preto.png"></a>
+		<button class="buttonMensagem" onclick="indisponivel()" aria-label="Mensagens"><img src="assets/message.png"></button>
+	</header>
+
+	<main class="ConteudoPagina">
+
+		<h1>ATUALIZAÇÃO DE INFORMAÇÕES MÉDICAS</h1>
+
+		<form id="FormularioMedico">
+
+			<div class="LinhaIMC">
+				<div class="IndicadorIMC" id="IndicadorIMC">
+					<small>IMC atual</small>
+					<strong id="ValorIMC">--</strong>
+					<small id="NivelIMC">Informe peso e altura</small>
+				</div>
+
+				<div class="CalculoIMC">
+					<strong>Atualizar IMC</strong>
+					<div class="LinhaCalculo">
+						<label>Peso (kg)<input name="peso" id="PesoIMC" type="number" min="1" max="500" step="0.1" required></label>
+						<label>Altura (m)<input name="altura" id="AlturaIMC" type="number" min="0.5" max="2.8" step="0.01"
+								required></label>
+						<button class="buttonPreto" type="button" id="buttonCalcular">CALCULAR</button>
+					</div>
+					<div>
+					</div>
+
+					<fieldset>
+						<legend>Marque os problemas de saúde que tenha sido diagnosticado ou tratado por um médico</legend>
+						<div class="OpcoesMedicas">
+							<label><input type="checkbox" name="saude" value="Alcoolismo"> Alcoolismo</label>
+							<label><input type="checkbox" name="saude" value="Anemia"> Anemia</label>
+							<label><input type="checkbox" name="saude" value="Artrite/Artrose"> Artrite/Artrose</label>
+							<label><input type="checkbox" name="saude" value="Asma"> Asma</label>
+							<label><input type="checkbox" name="saude" value="AVC"> AVC</label>
+							<label><input type="checkbox" name="saude" value="Diabetes"> Diabetes</label>
+							<label><input type="checkbox" name="saude" value="Doença renal"> Doença renal</label>
+							<label><input type="checkbox" name="saude" value="Doença Autoimune"> Doença Autoimune</label>
+							<label><input type="checkbox" name="saude" value="Enfisema"> Enfisema</label>
+							<label><input type="checkbox" name="saude" value="Epilepsia/Convulsões"> Epilepsia/Convulsões</label>
+							<label><input type="checkbox" name="saude" value="Obesidade"> Obesidade</label>
+							<label><input type="checkbox" name="saude" value="Trombose"> Trombose</label>
+							<label><input type="checkbox" name="saude" value="Problemas Musculares"> Problemas Musculares</label>
+							<label><input type="checkbox" name="saude" value="Pressão Alta"> Pressão Alta</label>
+							<label><input type="checkbox" name="saude" value="Nenhum"> Nenhum</label>
+						</div>
+					</fieldset>
+
+					<div class="DuasColunas EspacoSuperior">
+						<fieldset>
+							<legend>Qual seu objetivo com a prática de atividade física?</legend>
+							<div class="OpcoesMedicas">
+								<label><input type="radio" name="objetivoMedico" value="Hipertrofia/Estética">
+									Hipertrofia/Estética</label>
+								<label><input type="radio" name="objetivoMedico" value="Lazer e Bem Estar/Terapêutico"> Lazer e Bem
+									Estar/Terapêutico</label>
+								<label><input type="radio" name="objetivoMedico" value="Condicionamento físico"> Condicionamento
+									físico</label>
+							</div>
+						</fieldset>
+
+						<label>Possui alguma restrição à prática de atividade física?<input name="restricao"></label>
+					</div>
+
+					<div class="AlinharDireita EspacoSuperior">
+						<a class="buttonLaranja" href="../treinos/treinos.html">GERAR NOVO TREINO</a>
+						<button class="buttonPreto" type="submit">SALVAR</button>
+					</div>
+		</form>
+	</main>
+
+	<script src="js/dados.js"></script>
+	<script src="js/perfil.js"></script>
+	<script src="js/informacoes.js"></script>
+</body>
+
+</html>
