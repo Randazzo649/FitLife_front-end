@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>FitLife | Meu perfil</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{/css/paginas.css}">
+<script th:inline="javascript">
+window.FITLIFE_URLS = { shell: /*[[${shellUrl}]]*/ 'http://127.0.0.1:5500/', perfil: /*[[${perfilUrl}]]*/ 'http://127.0.0.1:8082/perfil', treinos: /*[[${treinosUrl}]]*/ 'http://127.0.0.1:8083/', personal: /*[[${personalUrl}]]*/ 'http://127.0.0.1:8084/', comunidade: /*[[${comunidadeUrl}]]*/ 'http://127.0.0.1:8085' };
+</script>
+</head>
+
+<body>
+	<header class="BarraSuperior">
+		<button class="buttonVoltar" onclick="voltarPagina()" aria-label="Voltar">←</button>
+		<a class="MarcaCentral" th:href="@{/perfil}"><img th:src="@{/assets/logo_fitlife_preto.png}"></a>
+		<button	class="buttonMensagem" onclick="indisponivel()" aria-label="Mensagens"><img th:src="@{/assets/message.png}"alt=""></button>
+	</header>
+
+	<main class="ConteudoPagina">
+
+		<div class="PainelPerfil">
+
+			<aside class="CartaoPerfil">
+				<a class="buttonEditar" th:href="@{/editar-perfil}" title="Editar perfil"><img th:src="@{/assets/edit_3.png}"></a>
+				<div class="FotoPerfil" id="FotoPerfil">👤</div>
+
+				<h2 id="NomePerfil">Seu nome</h2>
+				<p>FitLife Standard</p>
+
+				<a class="buttonClaro" href="https://www.google.com/maps/search/academias+perto+de+mim/" target="_blank" rel="noopener">⌖ ENCONTRAR ACADEMIA</a>
+				<a class="buttonClaro" th:href="${personalUrl}">♧ ENCONTRAR PERSONAL</a>
+			</aside>
+
+			<section class="AtalhosPerfil">
+				<a class="Atalho" th:href="${treinosUrl}">
+					<img th:src="@{/assets/gym.png}">
+					<div>
+						<strong>MEUS TREINOS</strong>
+						<small>ACADEMIA | MEUS EXERCÍCIOS</small>
+					</div>
+					<span class="buttonLaranja">DETALHES</span>
+				</a>
+
+				<a class="Atalho" th:href="@{/atualizar-informacoes}"><img th:src="@{/assets/medical-record.png}">
+					<div>
+						<strong>ATUALIZAR INFORMAÇÕES</strong>
+						<small>INFORMAÇÕES MÉDICAS | CÁLCULO DE IMC</small>
+					</div>
+					<span class="buttonLaranja">ATUALIZAR</span>
+				</a>
+
+				<div class="GradeAtalhos">
+					<a class="buttonImagem" th:href="${comunidadeUrl + '/eventos'}">
+						<span>MEUS EVENTOS</span></a>
+						<a class="buttonImagem Comunidade" th:href="${comunidadeUrl + '/comunidade'}">
+							<span>MINHA COMUNIDADE</span>
+						</a>
+					</div>
+
+			</section>
+
+		</div>
+
+	</main>
+
+	
+	
+	
+
+  
+<script th:src="@{/js/fitlife-api.js}" defer></script>
+<script th:src="@{/js/perfil.js}" defer></script>
+</body>
+
+</html>

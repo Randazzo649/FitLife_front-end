@@ -1,0 +1,26 @@
+server:
+  port: ${SERVER_PORT:8082}
+spring:
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 3MB
+  application:
+    name: fitlife-mfe-perfil
+  thymeleaf:
+    cache: ${THYMELEAF_CACHE:false}
+fitlife:
+  gateway:
+    base-url: ${FITLIFE_GATEWAY_URL:http://localhost:8080}
+  auth:
+    cookie-name: FITLIFE_AUTH
+    cookie-domain: ${FITLIFE_COOKIE_DOMAIN:}
+    cookie-same-site: ${FITLIFE_COOKIE_SAME_SITE:Lax}
+    cookie-secure: ${FITLIFE_COOKIE_SECURE:false}
+  cors:
+    shell-origin: ${FITLIFE_SHELL_ORIGIN:http://127.0.0.1:5500}
+  urls:
+    shell: ${FITLIFE_SHELL_URL:http://127.0.0.1:5500/}
+    treinos: ${FITLIFE_TREINOS_URL:http://127.0.0.1:8083}
+    personal: ${FITLIFE_PERSONAL_URL:http://127.0.0.1:8084}
+    comunidade: ${FITLIFE_COMUNIDADE_URL:http://127.0.0.1:8085}

@@ -1,0 +1,15 @@
+server:
+  port: ${SERVER_PORT:8081}
+
+spring:
+  application:
+    name: fitlife-mfe-cadastro
+  thymeleaf:
+    cache: ${THYMELEAF_CACHE:false}
+
+fitlife:
+  gateway:
+    base-url: ${FITLIFE_GATEWAY_URL:http://localhost:8080}
+
+  urls:
+    shell: ${FITLIFE_SHELL_URL:http://127.0.0.1:5500/}

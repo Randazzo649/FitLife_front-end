@@ -1,0 +1,5 @@
+(() => {
+ async function req(url,opts={}){const h=new Headers(opts.headers||{});h.set('Accept','application/json');if(opts.body&&!(opts.body instanceof FormData))h.set('Content-Type','application/json');const r=await fetch(url,{credentials:'same-origin',...opts,headers:h});const ct=r.headers.get('content-type')||'';const b=ct.includes('application/json')?await r.json():await r.text();if(!r.ok){if(r.status===401)location.href=window.FITLIFE_URLS?.shell||'http://127.0.0.1:5500/';throw new Error(b?.message||b?.error||`Falha ${r.status}`);}return b;}
+ window.FitLifeApi={requisicao:req,usuario:()=>req('/bff/usuario/me'),treinos:()=>req('/bff/treinos'),salvarTreinos:x=>req('/bff/treinos',{method:'PUT',body:JSON.stringify(x)})};
+ window.voltarPagina=()=>{if(history.length>1)history.back();else location.href=window.FITLIFE_URLS?.perfil||'http://127.0.0.1:8082/perfil';};window.indisponivel=()=>alert('Funcionalidade indisponível');
+})();

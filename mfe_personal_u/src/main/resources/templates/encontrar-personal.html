@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>FitLife | Encontrar personal</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" th:href="@{/css/paginas.css}"/>
+<script th:inline="javascript">
+window.FITLIFE_URLS = { shell: /*[[${shellUrl}]]*/ 'http://127.0.0.1:5500/', perfil: /*[[${perfilUrl}]]*/ 'http://127.0.0.1:8082/perfil', treinos: /*[[${treinosUrl}]]*/ 'http://127.0.0.1:8083/', personal: /*[[${personalUrl}]]*/ 'http://127.0.0.1:8084/', comunidade: /*[[${comunidadeUrl}]]*/ 'http://127.0.0.1:8085' };
+</script>
+</head>
+<body>
+<header class="BarraSuperior">
+<button aria-label="Voltar" class="buttonVoltar" onclick="voltarPagina()">←</button>
+<a class="MarcaCentral" th:href="${perfilUrl}"><img th:src="@{/assets/logo_fitlife_preto.png}"/></a>
+<button aria-label="Mensagens" class="buttonMensagem" onclick="indisponivel()"><img th:src="@{/assets/message.png}"/></button>
+</header>
+<main class="ConteudoPagina">
+<h1>ENCONTRE UM PERSONAL</h1>
+<div class="ResumoBusca">
+<div>
+<small>SEU OBJETIVO</small>
+<strong id="ObjetivoBusca">Condicionamento físico</strong>
+</div>
+<div>
+<small>CIDADE, ESTADO</small>
+<strong id="CidadeBusca">Não informado</strong>
+</div>
+</div>
+<div class="GradePersonais" id="ListaPersonais"></div>
+</main>
+
+
+
+
+<script th:src="@{/js/fitlife-api.js}" defer></script>
+<script th:src="@{/js/personais.js}" defer></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.fitlife</groupId>
+    <artifactId>fitlife-frontends</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>FitLife Frontends Monorepo</name>
+    <description>Agregador Maven para os cinco MFEs independentes do FitLife.</description>
+    <modules>
+        <module>mfe_cadastro_u</module>
+        <module>mfe_perfil_u</module>
+        <module>mfe_treinos_u</module>
+        <module>mfe_personal_u</module>
+        <module>mfe_comunidade_u</module>
+    </modules>
+</project>

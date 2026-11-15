@@ -1,0 +1,3 @@
+package com.fitlife.mfe.treinos.web.controller;
+import org.springframework.beans.factory.annotation.Value;import org.springframework.stereotype.Controller;import org.springframework.ui.Model;import org.springframework.web.bind.annotation.*;
+@Controller public class PaginasController {private final String shell,perfil;public PaginasController(@Value("${fitlife.urls.shell}")String s,@Value("${fitlife.urls.perfil}")String p){shell=s;perfil=p;}@GetMapping({"/","/treinos"})public String treinos(@CookieValue(value="FITLIFE_AUTH",required=false)String token,Model model){if(token==null||token.isBlank())return "redirect:"+shell;model.addAttribute("perfilUrl",perfil+"/perfil");model.addAttribute("shellUrl",shell);return "treinos";}}
