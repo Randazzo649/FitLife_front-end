@@ -8,8 +8,9 @@ on:
     branches:
       - main
     paths:
-      - 'mfe_cadastro_u/**'
-      - 'pom.xml'
+    - 'mfe_cadastro_u/**'
+    - '.github/workflows/**'
+    - 'pom.xml'
   workflow_dispatch:
 
 permissions:
