@@ -84,7 +84,7 @@
       const corpo = await resposta.json().catch(() => ({}));
       if (!resposta.ok) throw new Error(corpo.message || corpo.error || 'Não foi possível concluir o cadastro.');
       alert('Cadastro realizado! Faça login para acessar seu perfil.');
-      const shellUrl = (window.FITLIFE_CONFIG?.SHELL_URL || 'http://127.0.0.1:5500/');
+      const shellUrl = (window.FITLIFE_CONFIG?.SHELL_URL || 'https://fitligemfes.z41.web.core.windows.net/');
       window.location.href = shellUrl;
     } catch (erro) {
       const aviso = document.getElementById('AvisoGeral');
