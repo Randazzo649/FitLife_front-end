@@ -78,6 +78,10 @@ As URLs locais dos MFEs estão centralizadas em `shell/js/config.js`. Para publi
 - O Gateway e os microsserviços são publicados pelo repositório de backend, não por este monorepo.
 - Em produção, configure domínios e cookies conforme o README do backend; os MFEs precisam de configuração coerente de origem, segurança e domínio de cookie.
 
+## Configuração de produção no Azure
+
+Consulte [`AZURE_CONFIGURACAO.md`](AZURE_CONFIGURACAO.md) para a matriz de variáveis de ambiente, URLs públicas, CORS, cookies e limitações conhecidas de sessão entre domínios.
+
 ## Observação sobre validação
 
 Este pacote organiza os cinco MFEs em um único repositório Git. A agregação Maven facilita executar os testes, mas não substitui a execução local com Java/Maven, nem a validação ponta a ponta com Gateway, microsserviços e banco de dados.

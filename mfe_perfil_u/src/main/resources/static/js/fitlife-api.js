@@ -8,7 +8,7 @@
     const body = contentType.includes('application/json') ? await response.json() : await response.text();
     if (!response.ok) {
       const message = body && typeof body === 'object' ? (body.message || body.error || body.detail) : body;
-      if (response.status === 401) location.href = window.FITLIFE_URLS?.shell || 'http://127.0.0.1:5500/';
+      if (response.status === 401) location.href = window.FITLIFE_URLS?.shell || 'https://fitligemfes.z41.web.core.windows.net/';
       throw new Error(message || `Falha na comunicação (${response.status}).`);
     }
     return body;

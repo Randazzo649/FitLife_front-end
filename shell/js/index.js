@@ -1,7 +1,7 @@
 /* Login do Shell: a autenticação é executada pelo BFF do MFE de perfil. */
 (function () {
   const imagens=document.querySelectorAll('.ImagemDestaque'),fundo=document.getElementById('FundoModal'),abrir=document.getElementById('buttonAbrirLogin'),fechar=document.getElementById('buttonFecharLogin'),form=document.getElementById('FormularioLogin'),email=document.getElementById('EmailLogin'),senha=document.getElementById('SenhaLogin'),aviso=document.getElementById('AvisoLogin'),linkCadastro=document.getElementById('buttonCadastro');
-  const c=window.FITLIFE_CONFIG||{},base=(c.PERFIL_URL||'http://127.0.0.1:8082').replace(/\/$/,''),signup=(c.CADASTRO_URL||'http://127.0.0.1:8081').replace(/\/$/,'');let current=0;
+  const c=window.FITLIFE_CONFIG||{},base=(c.PERFIL_URL||'https://fitlifemfeperfil-h0gfcmh9gecshfhf.mexicocentral-01.azurewebsites.net').replace(/\/+$/,''),signup=(c.CADASTRO_URL||'https://fitlifemfecadastrousuario-h7e7g0e7emfef4b7.mexicocentral-01.azurewebsites.net').replace(/\/+$/,'');let current=0;
   if(linkCadastro)linkCadastro.href=signup+'/';
   if(imagens.length>1&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches)setInterval(()=>{imagens[current].classList.remove('Ativa');current=(current+1)%imagens.length;imagens[current].classList.add('Ativa');},6000);
   function open(){fundo.hidden=false;document.body.style.overflow='hidden';email.focus();}function close(){fundo.hidden=true;document.body.style.overflow='';aviso.hidden=true;abrir.focus();}
