@@ -1,3 +1,4 @@
+
 /* Navegação e validação das três etapas do cadastro FitLife. */
 (() => {
   const paineis = [...document.querySelectorAll('.PainelEtapa')];
@@ -84,7 +85,7 @@
       const corpo = await resposta.json().catch(() => ({}));
       if (!resposta.ok) throw new Error(corpo.message || corpo.error || 'Não foi possível concluir o cadastro.');
       alert('Cadastro realizado! Faça login para acessar seu perfil.');
-      const shellUrl = (window.FITLIFE_CONFIG?.SHELL_URL || 'https://fitligemfes.z41.web.core.windows.net/');
+      const shellUrl = window.FITLIFE_CONFIG?.SHELL_URL || 'https://fitligemfes.z41.web.core.windows.net/';
       window.location.href = shellUrl;
     } catch (erro) {
       const aviso = document.getElementById('AvisoGeral');
@@ -111,7 +112,7 @@
       etapa--;
       mostrar();
     } else if (history.length > 1) history.back();
-    else window.location.href = window.FITLIFE_CONFIG?.SHELL_URL || 'http://127.0.0.1:5500/';
+    else window.location.href = window.FITLIFE_CONFIG?.SHELL_URL || 'https://fitligemfes.z41.web.core.windows.net/';
   });
 
   mostrar();
