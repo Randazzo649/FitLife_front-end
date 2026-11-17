@@ -1,0 +1,35 @@
+
+name: Deploy Shell to Azure Storage
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'shell/**'
+      - '.github/workflows/deploy-shell.yml'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Upload Shell to Azure Storage
+        uses: azure/CLI@v1
+        env:
+          AZURE_STORAGE_ACCOUNT_KEY: ${{ secrets.AZURE_STORAGE_ACCOUNT_KEY }}
+        with:
+          inlineScript: |
+            az storage blob upload-batch \
+              --account-name fitligemfes \
+              --account-key "$AZURE_STORAGE_ACCOUNT_KEY" \
+              --auth-mode key \
+              --destination '$web' \
+              --source shell \
+              --overwrite true
