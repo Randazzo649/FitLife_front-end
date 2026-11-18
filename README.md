@@ -93,3 +93,6 @@ Este pacote organiza os cinco MFEs em um único repositório Git. A agregação 
 - Pedro Henrique Kleim Vieira
 - Riccardo Randazzo
 - Yuri Sobezak
+
+## Vídeo
+https://www.youtube.com/watch?v=Sv49b03aIbU&feature=youtu.be
