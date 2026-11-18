@@ -85,3 +85,11 @@ Consulte [`AZURE_CONFIGURACAO.md`](AZURE_CONFIGURACAO.md) para a matriz de vari�
 ## Observação sobre validação
 
 Este pacote organiza os cinco MFEs em um único repositório Git. A agregação Maven facilita executar os testes, mas não substitui a execução local com Java/Maven, nem a validação ponta a ponta com Gateway, microsserviços e banco de dados.
+
+## Integrantes
+
+- Amanda Milleo
+- Camila Araújo
+- Pedro Henrique Kleim Vieira
+- Riccardo Randazzo
+- Yuri Sobezak
